@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <p style="color:#ffffff;text-align:center;font-weight:bold">DAFTAR RPTRA</p>
+        
+  </ion-navbar>
+
+  <ion-toolbar no-border-top>
+      <ion-searchbar (ionInput)="getsearch($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list inset *ngIf="searchQuery ==''">
+    <ion-item-sliding *ngFor="let dat of datas">
+          <button ion-item (click)="goToSessionDetail(dat)">
+              <ion-icon name="map"></ion-icon>
+              <h2>{{dat.nama_rptra}}</h2>
+              <p>
+                  Alamat : {{dat.alamat}} &mdash;
+                  , {{dat.kelurahan}}
+                  , {{dat.kecamatan}}
+                  <br/>
+                  Luas area : {{dat.luas}}      
+              </p>                
+          </button>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-list inset *ngIf="searchQuery !=''">
+      <ion-item-sliding *ngFor="let dat of items">
+            <button ion-item (click)="goToSessionDetail(dat)">
+                <h2>{{dat.nama_rptra}}</h2>
+                <p>
+                    Alamat : {{dat.alamat}} &mdash;
+                    , {{dat.kelurahan}}
+                    , {{dat.kecamatan}}
+                    <br/>
+                    Luas area : {{dat.luas}}      
+                </p>                
+            </button>
+      </ion-item-sliding>
+    </ion-list>
+</ion-content>

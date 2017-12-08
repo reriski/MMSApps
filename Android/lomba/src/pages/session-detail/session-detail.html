@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>
+      RPTRA ( {{nama_rptra}} )
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content *ngIf="nama_rptra !='' " padding>
+    <ion-list>
+              <h1>Details </h1>
+              <hr>
+            <table>
+                  <tr>
+                    <td style="width:12%;">Alamat </td>
+                    <td style="width:1%;">:</td>
+                    <td> {{alamat}} {{kelurahan}} {{kecamatan}}</td>                  
+                  </tr>
+                  <tr>
+                      <td>Diresmikan </td>
+                      <td style="width:1%;">:</td>
+                      <td>{{waktu_peresmian}}</td>                  
+                  </tr>
+                  <tr>
+                      <td>Telepon </td>
+                      <td style="width:1%;">:</td>
+                      <td>{{telepon}}</td>                  
+                  </tr>
+                  <tr>
+                      <td>Fasilitas </td>
+                      <td style="width:1%;">:</td>
+                      <td>{{fasilitas}}</td>                  
+                  </tr>
+                  <tr>
+                      <td>Luas area </td>
+                      <td style="width:1%;">:</td>
+                      <td>{{luas}} Meter</td>                  
+                  </tr>
+                </table>
+                <hr>
+                <h1>Form Keluhan </h1>                
+                <label>Laporkan keluhan anda di sini</label>
+                <ion-item>
+                    <ion-textarea placeholder="Enter a description"></ion-textarea>
+                </ion-item>
+                <button ion-button round>Kirim</button>
+                <hr>
+    </ion-list>
+    <h1>Peta Location</h1>                              
+    <hr>              
+    <div #map id="map"></div>
+</ion-content>
+
+
